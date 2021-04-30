@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On Off project</title>
+
+    <style>
+
+        .bulb-container{
+            margin: 25px;
+            padding: 25px;
+          //  border: 1px solid red ;
+        }
+        button{
+            padding: 10px;
+            color: ivory;
+            background-color: black;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>here is my bulb project</h1>
+     <button onclick="onBulb()">turn on</button>
+    <button onclick="offBulb()">turn off</button>
+    <button id="onoffbutton" onclick="toggleBulb()">ON</button> 
+
+    <div class="bulb-container">
+         <img id="bulb"  src="bulb-off.jpg.png" onclick="toggleBulb()" alt="">
+    </div>
+
+
+
+    <script>
+
+        // on bulb
+        const onBulb = ()=>{
+
+            //bulb ob
+            let imgOb = document.getElementById("bulb");
+            imgOb.setAttribute('src','bulb-on.jpg.png');
+
+
+
+        };
+
+
+        //off bulb
+
+        const offBulb = ()=>{
+
+            let imgob1 = document.getElementById("bulb");
+            imgob1.setAttribute("src","bulb-off.jpg.png");
+
+        };
+
+
+        //toggle
+
+        const toggleBulb = ()=>{
+            let imgOb = document.getElementById("bulb");
+            let srcValue = imgOb.getAttribute('src');
+            console.log(srcValue)
+
+            //button value changing
+
+            let buttonOb = document.getElementById("onoffbutton")
+
+            let buttonText = buttonOb.innerHTML
+            console.log(buttonText)
+
+            if(srcValue == 'bulb-off.jpg.png')
+            {
+                onBulb();
+                buttonOb.innerHTML="OFF";
+            }
+            else{
+                offBulb();
+                buttonOb.innerHTML="ON"
+            }
+
+        }
+
+        //setInterval(toggleBulb,2000);
+
+    </script>
+</body>
+</html> 
